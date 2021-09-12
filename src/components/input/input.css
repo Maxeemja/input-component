@@ -21,14 +21,18 @@
 
 i {
     position: absolute;
-    left: 10px;
-    top: 48%;
     font-size: 18px;
     color: #828282;
     transform: translateY(-50%);
 }
+i.startic {
+    left: 10px;
+    top: 48%;
+}
 i.endic {
     right: 0;
+    top: 48%;
+    
 }
 .input.sm {
     padding: 10px 12px;

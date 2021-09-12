@@ -39,11 +39,11 @@ export default class InputList extends Component {
                 <div className="small-title">Icons</div>
                 <div className="grid">
                     <div className="grid-item">
-                        <div className="placeholder">&lt;Input /&gt;</div>
+                        <div className="placeholder">&lt;Input startIcon /&gt;</div>
                         <Input startIcon />
                     </div>
                     <div className="grid-item">
-                        <div className="placeholder">&lt;Input /&gt;</div>
+                        <div className="placeholder">&lt;Input endIcon /&gt;</div>
                         <Input endIcon/>
                     </div>
                 </div>

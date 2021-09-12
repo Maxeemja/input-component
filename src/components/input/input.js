@@ -42,11 +42,11 @@ export default class Input extends Component {
         }
         if(startIcon){
             classes += ` ic`
-            icon = <i class="fas fa-lock"></i>; 
+            icon = <i className="fas fa-phone startic"></i>; 
         }
         if(endIcon){
             classes += ` ic`;
-            icon = <i class="fas fa-lock endic"></i>;
+            icon = <i className="fas fa-lock endic"></i>;
         }
         if(fullwidth){
             container += ` full`
@@ -54,13 +54,13 @@ export default class Input extends Component {
         return(
             <div className={container}>
                 {label}
-                {icon}
                 <input className={classes} type="text" 
                     disabled={disabled} 
                     placeholder={placeh} 
                     onFocus={this.changeLabel} 
                     onBlur={this.reChangeLabel} 
-                    value={value} />
+                    value={value} maxLength="18"/>
+                {icon}
                 {textAr}
                 {helpText}
             </div>
