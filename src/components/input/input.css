@@ -1,0 +1,95 @@
+.input-wrapper {
+    width: 195px;
+    margin: 0 auto;
+    position: relative;
+}
+.input-wrapper:hover .label {
+    color:#333333;
+}
+.input {
+    border: 1px solid #828282;
+    border-radius: 8px;
+    padding: 18px 12px;
+    line-height: 20px;
+    color: #828282;
+    display: block;
+    margin: 0 auto;
+}
+.input.ic {
+    padding-left: 2rem !important;
+}
+
+i {
+    position: absolute;
+    left: 10px;
+    top: 48%;
+    font-size: 18px;
+    color: #828282;
+    transform: translateY(-50%);
+}
+i.endic {
+    right: 0;
+}
+.input.sm {
+    padding: 10px 12px;
+}
+.input-wrapper.full{
+    width: 100%;
+}
+.input-wrapper.full .input{
+    width: 95%;
+    float: left;
+}
+.input:hover, .error:hover {
+    border-color: #333333;
+}
+.input:focus {
+    outline: none !important;
+    border-color: #2962FF;
+}
+.input:disabled {
+    pointer-events: none;
+    background: #F2F2F2;
+    border-color: #E0E0E0;
+}
+textarea {
+    resize: none;
+    font: 400 14px IBM Plex Sans Arabic;
+}
+textarea.input:focus ~ .label{
+    color:#2962FF;
+}
+.label.focus {
+    color:#2962FF;
+}
+
+.label {
+    position: absolute;
+    width: 30px;
+    top: -15px;
+    left: 2px;
+    height: 18px;
+    font-size: 12px;
+    color: #333333;
+}
+.label.err, .helper-text.err {
+    color:#D32F2F;
+}
+.error {
+    border: 1px solid #D32F2F;
+}
+.error:focus{
+    outline: none !important;
+    border-color: #D32F2F;
+}
+.helper-text {
+    position: absolute;
+    left: 2px;
+    font-size: 10px;
+    margin-top: 4px;
+    margin-bottom: 10px;
+    color: #828282;
+}
+.hidden { 
+    display: none;
+}
