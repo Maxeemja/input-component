@@ -17,46 +17,23 @@ export default class Input extends Component {
         const {disabled, error, value, helperText, startIcon, size, fullwidth, rows , multiline, endIcon} = this.props;
 
        
-        let classes = `input`;
-        let label = <div className="label">Label</div>;
-        let placeh = `Placeholder`;
-        let helpText = <div className="helper-text">{helperText}</div>
-        let container = `input-wrapper`;
-        let textAr = <textarea className="input hidden" cols="25" rows={rows} placeholder="Placeholder"></textarea> ;
-        let icon = ``;
-        if(size){
-            classes += ` ${size}`
-        } else {
-            classes += ` md`
-        }
-        
-        if(multiline){
-            textAr = <textarea className="input" cols="25" rows={rows} placeholder="Placeholder"></textarea> ;
-            classes += ` hidden`
-        }
+        let classes = `input ${error ? 'error' : ''} ${size ? size : 'md'} ${multiline ? 'hidden' : ''} ${startIcon || endIcon ? 'ic' : ''}`;
+        let label = error ? <div className="label err">Label</div> : <div className="label">Label</div>;
+        let helpText = error ? <div className="helper-text err">{helperText}</div> : <div className="helper-text">{helperText}</div> ;
+        let container = fullwidth ? `input-wrapper full` : `input-wrapper`;
+        let textAr = multiline ? <textarea className="input" cols="25" rows={rows} placeholder="Placeholder"></textarea> 
+                : <textarea className="input hidden" cols="25" rows={rows} placeholder="Placeholder"></textarea> ;
+        let icon = startIcon ? <i className="fas fa-phone startic"></i> 
+                : endIcon ? <i className="fas fa-lock endic"></i> : null ;
 
-        if(error){
-            classes += ` error`;
-            label = <div className="label err">Label</div>;
-            helpText = <div className="helper-text err">{helperText}</div>
-        }
-        if(startIcon){
-            classes += ` ic`
-            icon = <i className="fas fa-phone startic"></i>; 
-        }
-        if(endIcon){
-            classes += ` ic`;
-            icon = <i className="fas fa-lock endic"></i>;
-        }
-        if(fullwidth){
-            container += ` full`
-        }
+        classes = classes.replace('  ', ' ').trim();
+
         return(
             <div className={container}>
                 {label}
                 <input className={classes} type="text" 
                     disabled={disabled} 
-                    placeholder={placeh} 
+                    placeholder="Placeholder" 
                     onFocus={this.changeLabel} 
                     onBlur={this.reChangeLabel} 
                     value={value} maxLength="18"/>
